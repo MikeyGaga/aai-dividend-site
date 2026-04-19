@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australian AI Dividend — A Policy Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF7F0;
+  --bg-card: #F4EEE0;
+  --bg-alt: #EDE4D1;
+  --ink: #14110D;
+  --ink-soft: #3D352B;
+  --ink-faint: #7A6F60;
+  --accent: #2E4A3A;
+  --accent-hover: #3E5D4A;
+  --accent-soft: #D8DFD5;
+  --gold: #9B7A3D;
+  --gold-deep: #7A5E2B;
+  --rule: #C9BDA5;
+  --rule-soft: #DCD2BD;
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--bg);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern", "liga", "onum";
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 30%, rgba(139,107,52,0.04) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(46,74,58,0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 72px 48px 120px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ───── MASTHEAD ───── */
+
+.masthead {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 18px 0 20px;
+  margin-bottom: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.masthead-left { display: flex; gap: 24px; align-items: center; }
+.masthead-tag {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 4px 10px;
+  letter-spacing: 0.16em;
+}
+
+.title-block { margin-bottom: 48px; }
+
+.eyebrow {
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-family: var(--display);
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.25;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-variation-settings: "SOFT" 60, "opsz" 144;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+.byline {
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  font-variation-settings: "SOFT" 30;
+}
+
+.byline strong {
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+
+/* ───── THESIS ───── */
+
+.thesis {
+  margin: 64px -12px 72px;
+  padding: 44px 52px;
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent);
+  position: relative;
+}
+
+.thesis::before {
+  content: '§';
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-family: var(--display);
+  font-size: 28px;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+.thesis p {
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.42;
+  font-weight: 400;
+  color: var(--ink);
+  font-variation-settings: "SOFT" 50, "opsz" 72;
+  letter-spacing: -0.005em;
+}
+
+.thesis p em { font-style: italic; color: var(--accent); }
+
+/* ───── SECTIONS ───── */
+
+section { margin-bottom: 72px; }
+
+h2 {
+  font-family: var(--display);
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  color: var(--ink);
+  margin-bottom: 24px;
+  font-variation-settings: "SOFT" 20, "opsz" 144;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-eyebrow .num {
+  font-family: var(--display);
+  font-size: 72px;
+  line-height: 0.9;
+  font-weight: 400;
+  color: var(--gold);
+  font-variation-settings: "SOFT" 0, "opsz" 144;
+  letter-spacing: -0.04em;
+  font-feature-settings: "lnum", "tnum";
+  flex-shrink: 0;
+}
+
+.section-eyebrow .label {
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+h3 {
+  font-family: var(--display);
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 40px 0 12px;
+  font-variation-settings: "SOFT" 30, "opsz" 72;
+}
+
+h4 {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 28px 0 6px;
+  letter-spacing: -0.005em;
+}
+
+p { margin-bottom: 16px; color: var(--ink); }
+p + p { margin-top: -2px; }
+
+em { font-style: italic; }
+strong { font-weight: 600; color: var(--ink); }
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+a:hover { color: var(--gold); }
+
+.lead {
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.small { font-size: 15px; color: var(--ink-soft); }
+
+hr.divider {
+  border: none;
+  height: 1px;
+  background: var(--rule);
+  margin: 48px 0;
+}
+
+hr.ornament {
+  border: none;
+  text-align: center;
+  margin: 56px 0;
+  overflow: visible;
+  height: 20px;
+}
+hr.ornament::after {
+  content: '◊ ◊ ◊';
+  font-family: var(--display);
+  font-size: 16px;
+  color: var(--gold);
+  letter-spacing: 0.6em;
+  padding-left: 0.6em;
+}
+
+/* ───── TABLES ───── */
+
+.table-wrap {
+  margin: 28px 0;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 12px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+
+th {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--bg-alt);
+}
+
+td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
+tr:last-child td { border-bottom: none; }
+
+/* ───── MECHANISM BLOCKS ───── */
+
+.mechanism {
+  margin: 36px 0;
+  display: grid;
+  gap: 20px;
+}
+
+.mechanism-block {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  padding: 28px 32px;
+}
+
+.mechanism-num {
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.mechanism-block h3 { margin-top: 0; margin-bottom: 12px; }
+
+/* ───── FLYWHEEL ───── */
+
+.flywheel-wrap {
+  margin: 32px -20px;
+  padding: 40px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  text-align: center;
+}
+
+.flywheel-wrap svg { max-width: 100%; height: auto; }
+
+.flywheel-caption {
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* ───── TRAJECTORY CHART ───── */
+
+.chart-wrap {
+  margin: 32px 0;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  padding: 32px;
+}
+
+.chart-title {
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: 72px 1fr 80px;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.chart-grid .year {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.chart-grid .bar-track {
+  height: 28px;
+  background: var(--bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-grid .bar {
+  height: 100%;
+  background: var(--accent);
+}
+
+.chart-grid .value {
+  font-family: var(--display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  text-align: right;
+}
+
+.chart-note {
+  font-size: 14px;
+  color: var(--ink-faint);
+  font-style: italic;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* ───── IN BRIEF ───── */
+
+.in-brief {
+  margin: 0 -12px 56px;
+  padding: 36px 48px;
+  background: var(--bg-alt);
+  border-left: 3px solid var(--gold);
+}
+
+.in-brief .eyebrow { margin-bottom: 18px; color: var(--gold); }
+
+.in-brief p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.in-brief p:last-child { margin-bottom: 0; }
+
+.in-brief p strong {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+/* ───── PULL QUOTE ───── */
+
+.pullquote {
+  margin: 48px 0;
+  padding: 28px 0 28px 32px;
+  border-left: 3px solid var(--gold);
+  font-family: var(--display);
+  font-size: 26px;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  font-variation-settings: "SOFT" 60, "opsz" 144;
+  letter-spacing: -0.01em;
+}
+
+.pullquote::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 16px;
+}
+
+/* ───── DROP CAP ───── */
+
+.dropcap::first-letter {
+  font-family: var(--display);
+  font-size: 64px;
+  line-height: 0.9;
+  font-weight: 600;
+  color: var(--ink);
+  font-variation-settings: "SOFT" 0, "opsz" 144;
+  float: left;
+  margin: 8px 10px -2px 0;
+  letter-spacing: -0.02em;
+}
+
+/* ───── STAKEHOLDER CARDS ───── */
+
+.stakeholders {
+  margin: 32px 0;
+  display: grid;
+  gap: 2px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+.stakeholder {
+  background: var(--bg-card);
+  padding: 28px 32px;
+}
+
+.stakeholder-label {
+  font-family: var(--display);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.stakeholder h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.stakeholder p {
+  margin-bottom: 0;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+/* ───── OPPOSITION Q&A ───── */
+
+.attack {
+  margin: 28px 0;
+  border-left: 2px solid var(--gold);
+  padding: 4px 0 4px 24px;
+}
+
+.attack-claim {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 60;
+  margin-bottom: 10px;
+}
+
+.attack-claim::before { content: '\201C'; color: var(--gold); margin-right: 2px; }
+.attack-claim::after  { content: '\201D'; color: var(--gold); margin-left: 2px; }
+
+.attack-response {
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ───── LISTS ───── */
+
+ul.proposal-list { list-style: none; margin: 20px 0; }
+
+ul.proposal-list li {
+  padding: 12px 0 12px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+ul.proposal-list li:last-child { border-bottom: none; }
+
+ul.proposal-list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: var(--accent);
+  font-family: var(--display);
+  font-weight: 600;
+}
+
+/* ───── FOOTER ───── */
+
+.footer {
+  margin-top: 100px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ink);
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ───── MOBILE ───── */
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .page { padding: 40px 22px 80px; }
+  h1 { font-size: 44px; }
+  .subtitle { font-size: 20px; }
+  .thesis { margin: 40px -10px 56px; padding: 32px 28px; }
+  .thesis p { font-size: 19px; }
+  .in-brief { margin: 0 -10px 40px; padding: 24px 22px; }
+  .in-brief p { font-size: 15px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 20px; }
+  .mechanism-block { padding: 22px 24px; }
+  .flywheel-wrap { margin: 28px -20px; padding: 28px 8px; }
+  .chart-wrap { padding: 20px 16px; }
+  .chart-grid { grid-template-columns: 56px 1fr 70px; font-size: 14px; }
+  .stakeholder { padding: 22px 24px; }
+  .masthead { font-size: 10px; flex-wrap: wrap; gap: 8px; }
+  th, td { padding: 10px 16px; font-size: 15px; }
+  .attack-claim { font-size: 18px; }
+}
+
+/* ───── PRINT ───── */
+
+@media print {
+  body { background: white; font-size: 11pt; }
+  body::before { display: none; }
+  .page { max-width: none; padding: 0; }
+  h1 { font-size: 32pt; }
+  .subtitle { font-size: 16pt; }
+  .thesis { margin: 16pt 0; padding: 14pt 20pt; page-break-inside: avoid; }
+  .thesis p { font-size: 13pt; }
+  .in-brief { margin: 14pt 0; padding: 12pt 18pt; page-break-inside: avoid; }
+  .in-brief p { font-size: 10.5pt; }
+  h2 { font-size: 18pt; page-break-after: avoid; }
+  h3 { font-size: 13pt; page-break-after: avoid; }
+  section { page-break-before: always; page-break-inside: auto; margin-bottom: 0; padding-top: 4pt; }
+  section:first-of-type { page-break-before: always; }
+  .mechanism-block, .stakeholder, .attack, .flywheel-wrap { page-break-inside: avoid; }
+  .chart-wrap { page-break-inside: avoid; }
+  .pullquote { page-break-inside: avoid; page-break-before: avoid; }
+  .pullquote + p { page-break-before: avoid; }
+  hr.ornament { display: none; }
+  .footer { page-break-before: always; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ───────────── MASTHEAD ───────────── -->
+
+<div class="masthead">
+  <div class="masthead-left">
+    <span class="masthead-tag">Policy Brief</span>
+    <span>Apr&nbsp;2026</span>
+  </div>
+  <div>M.&nbsp;Bois · Adelaide</div>
+</div>
+
+<!-- ───────────── TITLE ───────────── -->
+
+<div class="title-block">
+  <div class="eyebrow">A Proposal for the Commonwealth</div>
+  <h1>Australian<br>AI&nbsp;Dividend</h1>
+  <div class="subtitle">A share in the AI future<br>for every Australian.</div>
+  <div class="byline">By <strong>Michael Bois</strong> &nbsp;·&nbsp; For consultation with political, industry, and institutional stakeholders</div>
+</div>
+
+<!-- ───────────── IN BRIEF ───────────── -->
+
+<div class="in-brief">
+  <div class="eyebrow">In Brief</div>
+  <p><strong>Proposal.</strong> The Dividend charges AI providers for the commercial supply of AI services to Australian users, assessed against the energy footprint of that supply under the emerging international disclosure regime. The charge is progressive and banded — the smallest suppliers (Australian startups, academic research, open-source projects) pay nothing; the largest hyperscale operators pay the highest marginal rate.</p>
+  <p><strong>Distribution.</strong> Revenue distributes monthly to every Australian adult as ecosystem credit — usable across AI providers and Registered Australian merchants at each participant's advertised rate. Unredeemed credit sweeps to a sovereign Endowment modelled on the <em>Future Fund Act 2006</em>, paying out a lump sum to every Australian at age 21. At maturity the scheme channels approximately A$4 billion per month to Australian households and the Endowment combined.</p>
+  <p><strong>Launch.</strong> Consultation 2026–27, legislation 2028, operational stand-up 2029, first distribution 2030 — timed to adopt rather than invent international AI measurement standards.</p>
+  <p><strong>Ask.</strong> Feedback from stakeholders in trade, industry, and Treasury frames; introductions to legal academics and former Commonwealth law officers to formalise the Commons Doctrine; engagement across the political spectrum for the consultation phase.</p>
+</div>
+
+<!-- ───────────── THESIS ───────────── -->
+
+<div class="thesis">
+  <p>The Australian AI Dividend charges AI companies for the commercial supply of AI services to Australian users — measured by the energy footprint of that supply, recognising Australia's contribution to AI through its data, users, and infrastructure. Revenue returns as monthly credit to every Australian adult, and compounds into a sovereign endowment that pays out to every Australian at age twenty-one.</p>
+  <p style="margin-top: 18px; font-size: 19px; line-height: 1.45;">It uses tools the Commonwealth already owns. It rests on legal architecture that has worked, without controversy, for forty years. It arrives <em>with</em> the emerging international AI measurement regime, not against it. And it delivers something Australians currently do not have: a direct, ownable share in one of the largest economic transitions of the century.</p>
+</div>
+
+<!-- ───────────── STAKES ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">01</span><span class="label">The Stakes</span></div>
+  <h2>A share in the AI future</h2>
+  <p class="lead dropcap">On the first of every month, every Australian adult opens the Dividend app and sees their balance grow. The number that appears is their share of that month's receipts from the AI industry — money paid by the companies selling AI to Australians, returned to the Australians whose data, language, economy, and public investment make that AI commercially valuable. For Australian children, the same money compounds quietly, year by year, into a sovereign endowment that pays out at twenty-one.</p>
+
+  <p>This is the Australian AI Dividend: a share in the AI future for every Australian, by design.</p>
+
+  <p>The stakes for getting this right are large. By 2035, a small number of foreign-owned AI systems will have reshaped Australian work, commerce, and daily life. The productivity gains are real and large. The question is not <em>whether</em> the transition happens — it is happening — but who owns the value it creates.</p>
+
+  <p>Three answers are on the table.</p>
+
+  <p><strong>Do nothing</strong>, and the answer defaults to foreign shareholders. Every dollar of Australian-generated AI surplus leaves the country. No Australian household has any direct participation in the growth of an industry that will increasingly define Australian economic life. That is where we are today. That is where current trajectory leads.</p>
+
+  <p><strong>Regulate sectorally</strong>, on the European model, and the answer is a decade of contested rulemaking: licensing regimes for this industry, restrictions for that one, new rules each time a model improves, old rules fought again at every revision. Slow. Painful. Prone to capture. And — crucially — with no positive economic return for citizens. Regulation distributes cost, not benefit.</p>
+
+  <p><strong>The Dividend</strong> delivers on the ownership commitment through a market mechanism. It does not regulate AI. It does not slow AI. It does not pick winners. It charges AI companies for the commercial supply of their services to Australians — assessed against the energy footprint of that supply — and returns the proceeds to the citizens on whose commons the industry draws.</p>
+
+  <p class="pullquote">This is not a levy to punish. It is a levy to participate.</p>
+</section>
+
+<!-- ───────────── WHY ENERGY ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">02</span><span class="label">The Foundation</span></div>
+  <h2>Why energy?</h2>
+  <p class="lead">Every charge needs a base — a measurable, defensible unit against which the amount owed is calculated. The choice of base shapes everything that follows: what can be gamed, what can be hidden, what can be attacked under trade law, what aligns incentives correctly. Before walking through the mechanism, we owe the reader an answer to the question any serious reader will ask first: <em>what is being measured, and why is it the right thing to measure?</em></p>
+
+  <p>The object of the charge is the commercial supply of AI services to Australian users. The <strong>unit of assessment</strong> — the base against which liability is calculated — is the energy footprint of that supply. This is the unit the industry is already converging on globally for its own sustainability reporting. Australia arrives as an adopter of the emerging international regime, not an inventor of a new one.</p>
+
+  <p>The conceptual step is this. Australia's commons contribution — data, language, users, cultural output, scientific infrastructure, public research investment — is distributed across the full operation of every AI provider commercially serving Australians. No clean unit-by-unit allocation of commons draw to any individual provider is possible, and none is necessary. What is measurable is the scale at which each provider operates commercially — and at commercial scale, operation necessarily draws on the commons. Energy footprint is the disclosed, verifiable, internationally-aligned unit by which that scale is captured. The charge is proportional not to each provider's specific commons extraction (impractical), but to the scale of commercial activity that necessarily draws on the commons (practical and legally defensible).</p>
+
+  <h3 style="margin-top: 36px;">Four reasons energy is the right base</h3>
+
+  <p><strong>Industry already discloses it.</strong> Under the EU AI Act, providers of general-purpose AI models have been required to document the known or estimated energy consumption of their models since 2 August 2025, with Commission-issued measurement methodologies following. Google published its Gemini per-query energy figure in 2025 and is establishing a de facto reference. The ISO/IEC standard for AI sustainability is in final approval. The disclosure regime is operational internationally. Australia charging on it requires no new primary disclosure infrastructure — only an administrative framework to receive, verify, and act on figures providers are already producing.</p>
+
+  <p><strong>It scales with commercial activity.</strong> More supply to Australian users means more energy consumed by that supply. The unit grows with the thing being measured. A provider who serves twice as much Australian inference as another pays twice as much. There is no gaming opportunity in the unit itself.</p>
+
+  <p><strong>It is externally verifiable.</strong> Unlike tokens (proprietary, provider-specific), user counts (gameable, re-definable), or revenue (offshorable, transfer-priceable), energy disclosure is becoming internationally auditable under EU and ISO regimes. Australia relies on the same disclosed numbers that apply in other jurisdictions — the verification infrastructure is being built by the world, not by Canberra.</p>
+
+  <p><strong>It is provider-neutral.</strong> The same unit applied identically to every provider supplying Australians. Australian and foreign providers face identical assessment on identical inputs. No discriminatory treatment. No Digital Services Tax problem. No preferential domestic carve-outs.</p>
+
+  <h3 style="margin-top: 36px;">Where the energy is consumed does not matter</h3>
+
+  <p>Most AI serving Australians today is inferenced in US hyperscaler data centres, and that will still be substantially true in 2030. This does not weaken the scheme — it is why the scheme's foundation is not Australian electricity but <em>Australia's contribution to the global AI commons</em>. Energy is the unit by which AI companies' commons-derived revenue is measured. The obligation is to Australia, whose data, users, language, cultural output, and public research investment make the commercial supply possible. The physical location of electrons is incidental.</p>
+
+  <p class="pullquote">Put plainly: the electrons don't have to be Australian. The obligation does.</p>
+
+  <p>This distinction resolves the attack that breaks every previous version of this kind of proposal. The scheme is not claiming jurisdiction over US electricity. It is charging AI companies for supplying Australian users commercially, and using energy footprint as the internationally-accepted unit of measure for that supply. Foreign providers register, self-disclose under the international regime, and submit to audit — exactly as Netflix, Spotify, and other foreign digital suppliers have done under the Australian GST on imported digital services since 2017.</p>
+</section>
+
+<!-- ───────────── MECHANISM ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">03</span><span class="label">Mechanism</span></div>
+  <h2>How it works</h2>
+  <p class="lead">Three components. Each is simple; together they close the loop.</p>
+
+  <div class="mechanism">
+
+    <div class="mechanism-block">
+      <div class="mechanism-num">Component One</div>
+      <h3>The levy</h3>
+      <p>AI companies supplying Australian users pay a charge on the commercial supply of AI services to those users. The amount owed is assessed against the energy footprint of that supply, using the international disclosure regime. The charge is progressive and banded. The smallest suppliers — Australian startups, academic research, open-source projects — pay nothing. The largest hyperscale operators pay the highest marginal rate.</p>
+
+      <div class="table-wrap" style="margin-top: 20px;">
+        <table>
+          <thead>
+            <tr><th>Annual Australian inference energy</th><th>Marginal rate</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>First 1 GWh</td><td>Nil</td></tr>
+            <tr><td>1 – 10 GWh</td><td>5¢ / kWh</td></tr>
+            <tr><td>10 – 100 GWh</td><td>15¢ / kWh</td></tr>
+            <tr><td>100 – 500 GWh</td><td>30¢ / kWh</td></tr>
+            <tr><td>500 – 1,000 GWh</td><td>50¢ / kWh</td></tr>
+            <tr><td>Above 1,000 GWh</td><td>75¢ / kWh</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Measurement follows the emerging international regime — the EU AI Act (energy disclosure obligations for GPAI providers operational since August 2025), Google's published Gemini per-query methodology, and the ISO/IEC standard for AI sustainability. The assessment regime moves in three phases: regulator-published deemed rates (years 1–3), hybrid measurement (years 3–7), direct metering based on provider disclosure thereafter.</p>
+
+      <p>Foreign providers supplying Australian users register with the Dividend Authority as Registered Suppliers, disclose energy footprint figures under the international regime, and submit to audit by the Australian Taxation Office. This parallels the existing GST on imported digital services regime — the "Netflix Tax" — which has handled foreign digital suppliers' Australian obligations operationally since July 2017. Enforcement draws on Australian tax administration's established audit capacity, with direct precedent in the Petroleum Resource Rent Tax, the fringe-benefits-tax statutory formula methods, and fuel tax credits.</p>
+    </div>
+
+    <div class="mechanism-block">
+      <div class="mechanism-num">Component Two</div>
+      <h3>The credit ecosystem</h3>
+      <p>Revenue from the levy is distributed monthly to every Australian adult as Dividend credit. Credit is a unit of account within a statutory ecosystem. Every Registered Participant — citizen, merchant, AI provider, the Endowment — can hold credit, and can transfer credit to any other Registered Participant in exchange for the recipient's advertised goods or services.</p>
+
+      <p>Each recipient sets their own advertised exchange rate between credit and the dollar value of their goods or services, expressed as a multiplier against a <strong>rolling 90-day spot price</strong> published by the Authority. An AI provider may advertise 1.0x spot (one unit of credit redeems one unit of their compute at face value). A supermarket on thin margins may advertise 0.9x. A café confident of its margins, or looking to acquire new customers, may advertise 1.4x — offering a favourable exchange to attract credit-paying trade. A new business trying to build a customer base may offer 3x or more as a promotion. Exchange rates are a competitive strategy tool, set by each participant based on what they can afford and who they want to attract.</p>
+
+      <p>The citizen sees a simple app. Their dollar-equivalent balance at the current spot. A searchable directory of Registered Merchants with their current exchange rates. Percentage allocation with a running total. PayID for peer transfers. A Medicare-card fallback at anchor-merchant point-of-sale for the digitally excluded. Scheduled gifts for intergenerational contributions. What isn't allocated at month's end sweeps automatically to the Endowment. Low engagement is a valid operating mode, not a failure state.</p>
+
+      <p>Merchants use credit on identical terms to citizens. A café that receives credit from customers can spend it on the café's own AI inputs, or auto-allocate it by percentage to other Registered Participants — a coffee supplier, a local electrician, the café's accountant. When one merchant transfers credit to another, the receiving merchant issues a face-value gift voucher denominated at <em>credit × their advertised exchange rate</em>, which the originating merchant holds as a claim against the recipient's goods or services. Cash never enters the ecosystem. GST applies on every supply, per the established barter scheme framework (GSTR 2003/14).</p>
+
+      <p>The architectural consequence: there is no arbitrage vector. Credit cannot be converted to cash at any point. It can only be exchanged for goods or services, at rates the recipient advertises, across a market of Registered Participants. The participant who accepts the best exchange rate offered gets the best value. The merchant who offers the best exchange rate gets the most credit-paying trade. Price discovery is distributed across thousands of points of sale simultaneously.</p>
+    </div>
+
+    <div class="mechanism-block">
+      <div class="mechanism-num">Component Three</div>
+      <h3>The endowment</h3>
+      <p>Unredeemed credit flows to the Dividend Endowment — a Commonwealth statutory body modelled directly on the <em>Future Fund Act 2006</em>. The Endowment invests, accumulates, and pays out a single lump sum to each Australian at age&nbsp;21, calculated by residency-weighted share (days of eligible residency over total cohort residency days).</p>
+      <p>A Future Generations Advisory Panel — Australians aged 18–25 — sits in statute as a formal consultative voice on decisions affecting future beneficiaries. Core provisions are entrenched through absolute-majority amendment requirement and a mandatory 180-day public consultation period. Amendable under serious deliberation. Protected from casual rollback.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───────────── FLYWHEEL ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">04</span><span class="label">Ecosystem</span></div>
+  <h2>The flywheel</h2>
+  <p class="lead">Value enters the system through providers paying the levy. It distributes to Australian adults as monthly dividend. From there it moves in three directions — and this is the design's central feature.</p>
+
+  <div class="flywheel-wrap">
+    <svg viewBox="0 0 820 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Australian AI Dividend ecosystem flywheel">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2E4A3A"/>
+        </marker>
+        <marker id="arr-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#8A6B34"/>
+        </marker>
+        <style>
+          .node-label { font-family: 'Fraunces', Georgia, serif; font-size: 13px; font-weight: 600; fill: #1C1814; letter-spacing: 0.06em; text-transform: uppercase; }
+          .node-sub { font-family: 'Newsreader', Georgia, serif; font-size: 11px; fill: #7A6F60; font-style: italic; }
+          .flow-label { font-family: 'Fraunces', Georgia, serif; font-size: 10px; fill: #4A4138; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+          .flow-label-gold { font-family: 'Fraunces', Georgia, serif; font-size: 10px; fill: #8A6B34; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+        </style>
+      </defs>
+
+      <!-- Node: AI PROVIDERS -->
+      <g transform="translate(410, 70)">
+        <circle r="58" fill="#FBF6EC" stroke="#2E4A3A" stroke-width="2"/>
+        <text class="node-label" text-anchor="middle" y="-4">AI</text>
+        <text class="node-label" text-anchor="middle" y="14">Providers</text>
+      </g>
+
+      <!-- Node: DIVIDEND AUTHORITY -->
+      <g transform="translate(680, 220)">
+        <circle r="58" fill="#FBF6EC" stroke="#2E4A3A" stroke-width="2"/>
+        <text class="node-label" text-anchor="middle" y="-4">Dividend</text>
+        <text class="node-label" text-anchor="middle" y="14">Authority</text>
+      </g>
+
+      <!-- Node: AUSTRALIAN ADULTS -->
+      <g transform="translate(620, 450)">
+        <circle r="58" fill="#FBF6EC" stroke="#2E4A3A" stroke-width="2"/>
+        <text class="node-label" text-anchor="middle" y="-4">Australian</text>
+        <text class="node-label" text-anchor="middle" y="14">Adults</text>
+      </g>
+
+      <!-- Node: MERCHANTS -->
+      <g transform="translate(305, 490)">
+        <circle r="58" fill="#FBF6EC" stroke="#2E4A3A" stroke-width="2"/>
+        <text class="node-label" text-anchor="middle" y="-4">Anchor</text>
+        <text class="node-label" text-anchor="middle" y="14">Merchants</text>
+      </g>
+
+      <!-- Node: ENDOWMENT -->
+      <g transform="translate(140, 310)">
+        <circle r="58" fill="#FBF6EC" stroke="#8A6B34" stroke-width="2"/>
+        <text class="node-label" text-anchor="middle" y="-4">Dividend</text>
+        <text class="node-label" text-anchor="middle" y="14">Endowment</text>
+      </g>
+
+      <!-- Node: YOUNG AUSTRALIANS -->
+      <g transform="translate(140, 110)">
+        <circle r="58" fill="#FBF6EC" stroke="#8A6B34" stroke-width="2"/>
+        <text class="node-label" text-anchor="middle" y="-9">Young</text>
+        <text class="node-label" text-anchor="middle" y="8">Australians</text>
+        <text class="node-sub" text-anchor="middle" y="24">at age 21</text>
+      </g>
+
+      <!-- FLOW: Providers → Authority (LEVY) -->
+      <path d="M 470 90 Q 600 120 625 170" fill="none" stroke="#2E4A3A" stroke-width="1.8" marker-end="url(#arr)"/>
+      <text class="flow-label" x="585" y="110">LEVY ON</text>
+      <text class="flow-label" x="585" y="123">COMMERCIAL SUPPLY</text>
+
+      <!-- FLOW: Authority → Adults (MONTHLY CREDIT) -->
+      <path d="M 685 280 Q 690 360 650 400" fill="none" stroke="#2E4A3A" stroke-width="1.8" marker-end="url(#arr)"/>
+      <text class="flow-label" x="700" y="340">MONTHLY</text>
+      <text class="flow-label" x="700" y="353">CREDIT</text>
+
+      <!-- FLOW: Adults → Merchants -->
+      <path d="M 565 475 Q 480 510 365 500" fill="none" stroke="#2E4A3A" stroke-width="1.8" marker-end="url(#arr)"/>
+      <text class="flow-label" x="395" y="540">EXCHANGE AT MERCHANT RATE</text>
+
+      <!-- FLOW: Adults → Providers (AI redemption) — diagonal across -->
+      <path d="M 595 395 Q 490 280 440 130" fill="none" stroke="#2E4A3A" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+      <text class="flow-label" x="370" y="252">EXCHANGE AT</text>
+      <text class="flow-label" x="370" y="265">PROVIDER RATE</text>
+
+      <!-- FLOW: Adults → Endowment (UNREDEEMED) -->
+      <path d="M 565 465 Q 380 400 195 340" fill="none" stroke="#8A6B34" stroke-width="1.8" marker-end="url(#arr-gold)"/>
+      <text class="flow-label-gold" x="340" y="420">UNREDEEMED SWEEP</text>
+
+      <!-- FLOW: Endowment → Young Australians (at 21) -->
+      <path d="M 140 252 L 140 168" fill="none" stroke="#8A6B34" stroke-width="1.8" marker-end="url(#arr-gold)"/>
+      <text class="flow-label-gold" x="10" y="215">PAYOUT</text>
+      <text class="flow-label-gold" x="10" y="228">AT 21</text>
+
+    </svg>
+    <div class="flywheel-caption">All participants hold credit · All transfers at the recipient's advertised rate · No cash exit</div>
+  </div>
+
+  <p>Credit transferred to AI providers buys their compute at the provider's advertised rate. Credit transferred to Australian merchants buys goods and services at the merchant's advertised rate — which may be favourable (a pub at 1.4x spot competing for credit-paying trade) or at face value (an AI provider at 1.0x) or below face (a high-demand, low-margin business at 0.9x). Merchants who accumulate credit use it themselves or auto-allocate to other Registered Participants by percentage, exactly as citizens do. Merchant-to-merchant transfers settle via face-value gift voucher at the recipient's advertised rate. Cash never enters the ecosystem.</p>
+
+  <p>The loops reinforce. Provider revenue drives inference volume, which drives levy receipts, which drives credit issuance, which drives citizen demand for participating services, which drives provider revenue. Merchant participation attracts credit-paying customers; citizen allocation patterns attract merchants. Credit not spent at month's end sweeps to the Endowment, where it compounds across decades before delivering meaningful capital to young Australians at twenty-one — the age at which a lump sum most changes a life trajectory.</p>
+
+  <p class="pullquote">No stakeholder gives up something material for the scheme to work. That is the engineering test the design was built to pass.</p>
+</section>
+
+<!-- ───────────── MODELLING ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">05</span><span class="label">Economics</span></div>
+  <h2>What the dividend actually buys</h2>
+  <p class="small" style="margin-bottom: 28px;">Figures are working assumptions. Formal calibration is Treasury and Parliamentary Budget Office work.</p>
+
+  <h3>Per-adult monthly dividend trajectory</h3>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Estimated monthly dividend · 20 million adults · in scheme dollars</div>
+
+    <div class="chart-grid">
+      <div class="year">Year 3</div>
+      <div class="bar-track"><div class="bar" style="width: 8%;"></div></div>
+      <div class="value">$15</div>
+    </div>
+    <div class="chart-grid">
+      <div class="year">Year 6</div>
+      <div class="bar-track"><div class="bar" style="width: 25%;"></div></div>
+      <div class="value">$50</div>
+    </div>
+    <div class="chart-grid">
+      <div class="year">Year 9</div>
+      <div class="bar-track"><div class="bar" style="width: 50%;"></div></div>
+      <div class="value">$100</div>
+    </div>
+    <div class="chart-grid">
+      <div class="year">Year 12</div>
+      <div class="bar-track"><div class="bar" style="width: 100%;"></div></div>
+      <div class="value">$200</div>
+    </div>
+
+    <div class="chart-note">The trajectory compounds three effects: industry growth (inference volume), convergence of deemed rates toward actual measurement (pricing accuracy), and the progressive banded structure capturing a rising share of hyperscale operation. At maturity the scheme channels approximately <strong>A$4 billion per month</strong> in credit to Australian adults, of which a portion is spent through the ecosystem and the remainder sweeps to the Endowment — around <strong>A$48 billion annualised</strong>.</div>
+  </div>
+
+  <h3>What the first years actually buy</h3>
+  <p>It is tempting to read the early-year figures — $15, $20, $50 — as modest. They are, in absolute terms. The framing misses the point.</p>
+
+  <p>At present Australian consumer pricing, a mid-tier AI subscription — Google AI Plus, ChatGPT Go — runs A$12.99 per month. A premium subscription — Google AI Pro, ChatGPT Plus, Claude Pro — runs A$32.99 to A$35. <strong>The early-year Dividend buys a mid-tier AI subscription outright and substantially subsidises premium.</strong> For the median Australian — someone who wants AI to help write an email, plan a trip, brainstorm a gift for their partner's birthday, sort a recipe — the mid-tier tools are capable and the Dividend covers them in full. No out-of-pocket cost.</p>
+
+  <p><em>The industry does not make its money from that user.</em> The industry makes its money from power users: businesses, developers, creative professionals, high-volume commercial applications. Those users pay many hundreds of dollars a month; their personal Dividend is a rounding error in their AI spend. The scheme is engineered around this asymmetry. The light user is substantially funded by the Dividend. The heavy commercial user contributes in proportion to their consumption, as they do today.</p>
+
+  <p>The structural effect is <strong>universal participation without universal subsidy</strong>. Every Australian has meaningful access to AI regardless of means. The industry's revenue profile is unchanged. The funding comes from the same commercial users already paying at scale.</p>
+
+  <p>By the time the Dividend reaches $100–$200 per month in later years, its purpose evolves — from "universal entry to AI" to "meaningful monthly household supplement." But the first-years case is not that the Dividend is large. The case is that it is exactly the right size to buy every Australian entry to a transition that would otherwise pass them by.</p>
+
+  <h3>The endowment at maturity</h3>
+  <p>Unredeemed dividend compounds over decades. An Australian child born in 2030 accumulates twenty-one years of endowment contribution before payout. The target is a lump sum meaningful enough to change life trajectories for Australians of modest means — comparable in magnitude to a first-home deposit or a substantial education fund — but not so large as to be distortionary.</p>
+
+  <p>Precise figures depend on redemption rate, investment return, population growth, and the industry's energy trajectory. Formal modelling belongs to Treasury and PBO. The design constraint is clear: the payout should make a real difference in the life of a twenty-one-year-old starting out — and no more.</p>
+
+  <h3>Scale in context</h3>
+  <p>The top marginal rate — 75¢ per kWh — applies only to inference energy above 1,000 GWh per year served to Australian users. That is true hyperscale operation. The band exists for the maturing market: it indexes Australia's future capture to the industry's actual growth rather than its current size. The rate structure rewards the industry for scaling.</p>
+</section>
+
+<!-- ───────────── WHO WINS ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">06</span><span class="label">Coalition</span></div>
+  <h2>Who wins, and why</h2>
+  <p class="lead">The proposal is positive-sum by construction. Each stakeholder gains something specific, and the gains reinforce.</p>
+
+  <div class="stakeholders">
+
+    <div class="stakeholder" id="stake-citizen">
+      <div class="stakeholder-label">The Citizen</div>
+      <h3>Australian adults</h3>
+      <p>A meaningful monthly dividend — ten to twenty dollars in the early years, one to two hundred dollars per month at maturity. Usable at local businesses, at AI providers, or held for later. Real economic participation in productivity gains currently captured entirely offshore. A share of the AI future that does not depend on employment by a foreign-owned vendor. For the median Australian, the early-years Dividend buys a mid-tier AI subscription outright and substantially subsidises premium tools — a seat at the table, paid for by the industry itself.</p>
+    </div>
+
+    <div class="stakeholder" id="stake-inheritor">
+      <div class="stakeholder-label">The Inheritor</div>
+      <h3>Australian children</h3>
+      <p>A sovereign endowment accumulating across their childhood, delivering a lump sum at age twenty-one. Not a universal basic income. Not a means-tested welfare payment. An intergenerational compact that treats AI productivity as national inheritance — delivered at the age where a capital base most changes a life: starting a business, completing study, entering the housing market. A generational asset, built while they grew up, released as they start out.</p>
+    </div>
+
+    <div class="stakeholder" id="stake-local-economy">
+      <div class="stakeholder-label">The Local Economy</div>
+      <h3>Anchor merchants</h3>
+      <p>A new demand channel tied explicitly to local presence — and a new competitive tool. Each merchant sets their own exchange rate against credit, as favourable as their margins permit. A café competing for credit-paying customers can offer 1.4x spot; a new business building a customer base can offer 3x as a promotion. Smaller and newer merchants can outcompete incumbents on exchange rate in a way they can't on cash price. Received credit is used on identical terms to citizens — toward the merchant's own AI inputs, or auto-allocated by percentage to suppliers, or traded between merchants via face-value gift voucher. Not a subsidy. A market signal that local participation is valued and remunerated.</p>
+    </div>
+
+    <div class="stakeholder" id="stake-industry">
+      <div class="stakeholder-label">The Industry</div>
+      <h3>AI providers</h3>
+      <p>Regulatory stability. One federal market mechanism, set once and indexed over time, is substantially preferable to the sectoral EU model or fragmented state-level action. Market expansion: every Australian adult has subsidised access to participating services, which grows the addressable market rather than fragmenting it. <em>De minimis</em> protection for startups, academia, and open-source research — the first gigawatt-hour is free. Australia becomes a predictable jurisdiction, not a hostile one. This is not a punitive regime. It is a durable one.</p>
+    </div>
+
+    <div class="stakeholder" id="stake-sovereign">
+      <div class="stakeholder-label">The Sovereign</div>
+      <h3>The Commonwealth</h3>
+      <p>A political buffer against AI-displacement politics — a visible, durable citizen stake that changes the political equation when sectoral regulation is proposed. A sovereign asset independent of commodity cycles. Demonstrable sovereignty without protectionism, aligned with rather than divergent from emerging international frameworks. A durable fiscal mechanism that grows with the industry it levies.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───────────── OPPOSITION ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">07</span><span class="label">Defence</span></div>
+  <h2>What opponents will say, and what we say back</h2>
+  <p class="lead">The proposal has been stress-tested against ten distinct attack vectors from across the political spectrum. The six most likely to arise in early engagement are answered here. The remaining four — fig-leaf framing from the left, accessibility concerns, Greens bundling with sectoral regulation, and author credentials — have established rebuttals in the mechanism design and the full proposal.</p>
+
+  <div class="attack">
+    <div class="attack-claim">Measurement is impossible.</div>
+    <div class="attack-response">The usual first objection, and the most easily answered. The measurement regime already exists — built by the EU, Google, and ISO/IEC, not by Australia. Under the EU AI Act, providers of general-purpose AI models have been required to document their energy footprint since August 2025. Google published its Gemini per-query methodology in 2025. The ISO/IEC standard for AI sustainability is in final approval. By the Dividend's 2030 launch, the international regime will have been operational for five years with Commission-issued measurement methodologies. Australia adopts. Australia does not invent. Enforcement uses the Australian Taxation Office's established audit capacity extended to a new domain, with direct precedent in PRRT, FBT statutory formulas, and fuel tax credits. For the minority onshore case, AEMO and NGER already capture facility-level energy data. The attack assumes a regulator inventing measurement from scratch; the actual architecture is formulaic, internationally aligned, and externally auditable.</div>
+  </div>
+
+  <div class="attack">
+    <div class="attack-claim">It violates our trade agreements.</div>
+    <div class="attack-response">The Dividend is not a Digital Services Tax. DSTs tax the gross receipts of foreign firms from services supplied to domestic users — the structure the OECD has spent a decade disputing. The Dividend charges all suppliers, domestic and foreign, identical rates assessed against an industry-disclosed, internationally-aligned unit of measure. No discrimination. No preferential treatment. No offshore loophole. The legal foundation is the Commons Doctrine: Australia's contribution to AI, through its data, users, and infrastructure, establishes sovereign authority to charge for the commercial supply drawing on that commons. The operational model for foreign suppliers is the GST on imported digital services — the "Netflix Tax" — which has handled Australian obligations on Netflix, Spotify, Apple, and hundreds of foreign digital firms since July 2017, without trade dispute. The Dividend extends this existing, operational, uncontroversial Australian regime to a new domain. Trade law experts will recognise the structure on sight.</div>
+  </div>
+
+  <div class="attack">
+    <div class="attack-claim">It's a regressive subsidy to foreign corporations.</div>
+    <div class="attack-response">AI productivity gains are accruing whether Australia acts or not. The alternative to the Dividend is not redistribution-neutral — it is every dollar of Australian-generated AI surplus flowing to foreign shareholders. At maturity, the Dividend channels approximately A$4 billion per month — around A$48 billion annually — to Australian households and the Endowment. That is not a subsidy to foreign corporations. It is value recovered from a commons Australians collectively contribute to.</div>
+  </div>
+
+  <div class="attack">
+    <div class="attack-claim">Merchants will just arbitrage the credit for cash.</div>
+    <div class="attack-response">The architecture makes this structurally impossible. Credit is a unit of account within a closed ecosystem of Registered Participants. It never converts to cash at any point. A merchant who receives credit uses it on their own AI inputs, or auto-allocates it by percentage to suppliers, or transfers it to another merchant in exchange for a face-value gift voucher at the recipient's advertised rate. There is no cash-out path to attack. Exchange rates set by each merchant are a competitive tool, not an arbitrage vector — a merchant offering a better rate attracts more credit-paying trade, not more cash. GST treatment is established under the existing ATO barter scheme framework (GSTR 2003/14) that has operated for more than two decades. The arbitrage attack assumes a different architecture than the one proposed.</div>
+  </div>
+
+  <div class="attack">
+    <div class="attack-claim">The endowment is unconstitutional.</div>
+    <div class="attack-response">The Endowment is not a trust. It is a Commonwealth statutory body modelled directly on the <em>Future Fund Act 2006</em> — established constitutional architecture, uncontroversial and litigated over two decades. Distribution uses residency-weighted formulas based on established Australian categories (citizenship, permanent residency). Entrenchment mechanisms sit within ordinary parliamentary practice. No novel constitutional question arises. The same governance model today oversees the Future Fund, the Medical Research Future Fund, the DisabilityCare Australia Fund, and the Housing Australia Future Fund. The Dividend Endowment uses this architecture without variation.</div>
+  </div>
+
+  <div class="attack">
+    <div class="attack-claim">It's a gift to hyperscale incumbents.</div>
+    <div class="attack-response">The levy is explicitly progressive. The first gigawatt-hour is free. Rates escalate steeply across five bands. Small and mid-sized suppliers face low or zero compliance cost. The <em>de minimis</em> threshold was engineered specifically to protect Australian startups, academic research, and open-source projects. Incumbent advantage exists today, in the absence of the Dividend — the Dividend narrows it. Nothing in the Dividend changes the relative competitive positions inside the industry; it only recovers a share of the value the industry extracts from the Australian commons, regardless of which firm extracts it.</div>
+  </div>
+</section>
+
+<!-- ───────────── LEGAL ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">08</span><span class="label">Legal</span></div>
+  <h2>Legal framework</h2>
+  <p class="lead">The Dividend rests on a specific legal theory: Australia contributes materially to the operation of modern AI — through its data, its users, its infrastructure, its languages, its cultural and scholarly output, and sixty years of public investment in science, education, and communications — and the Commonwealth exercises sovereign authority over that contribution. The levy is a charge for the commercial supply of AI services drawing on that contribution, assessed against the energy footprint of that supply. It is not a market intervention. It is not a tax on foreign activity. It is not a Digital Services Tax.</p>
+
+  <p>Australia's data, user base, language, cultural output, scientific infrastructure, and six decades of public research investment together constitute a commons from which every commercial AI operation materially draws. Training corpora scraped from the open web include Australian contributions. Model performance on Australian English depends on Australian language data. Commercial viability in the Australian market depends on Australian users choosing to adopt the product. These are not incidental inputs — they are conditions on which commercial AI operation in Australia is possible.</p>
+
+  <p>The Commonwealth exercises sovereign authority over this commons on the same constitutional footing it has exercised authority over other national commons for more than a century — minerals, petroleum reserves, radio spectrum, territorial waters, fisheries. The characteristic Australian policy response to commercial extraction from a commons is not prohibition, but charging at a rate that captures super-normal returns without impeding operation. The Dividend applies this established pattern to a new domain.</p>
+
+  <p>This theory — <em>Australia's Share in the Global AI Commons</em> — is held as a reserved technical doctrine, to be developed formally with senior Australian legal academic and former Commonwealth law-officer input during consultation. This brief uses the ownership framing in civic language; the doctrinal work sits behind it.</p>
+
+  <h3>Constitutional basis</h3>
+  <p>Three constitutional powers support the scheme, each long-established and uncontroversial.</p>
+
+  <p><strong>Section 51(ii)</strong> of the Australian Constitution empowers the Commonwealth to levy taxation. The Dividend, structured as a charge for the commercial supply of AI services to Australian users assessed by energy footprint, falls within this power without novelty. <strong>Section 51(xxxix)</strong> — the incidental power — authorises the statutory machinery (Authority, Endowment, Advisory Panel) needed to administer and distribute the proceeds. <strong>Section 81</strong>, the appropriations power, governs the payment of dividend credits to citizens, on the same constitutional footing as every other Commonwealth disbursement.</p>
+
+  <p>Each of these powers has been tested repeatedly in the High Court. The scheme invents no new constitutional territory.</p>
+
+  <h3>Established precedents</h3>
+  <p>Five established Australian precedents provide direct architectural support. Four are embedded in Commonwealth statute; one is a longstanding ATO ruling. Each has operated for years or decades without controversy.</p>
+
+  <h4>Resource-rent charging — <em>Petroleum Resource Rent Tax Assessment Act 1987</em></h4>
+  <p>The PRRT — introduced by the Hawke-Keating Labor government, operating continuously since 15 January 1988 — establishes that the Commonwealth may charge for commercial exploitation that draws on a domestic contribution, using a formula that captures super-normal returns without interfering in commercial operation. Administered by the Australian Taxation Office. Thirty-eight years of continuous operation. No trade-treaty dispute. No constitutional challenge. Different commodity, same constitutional principle.</p>
+
+  <h4>Foreign supplier registration — GST on imported digital services (2017)</h4>
+  <p>Since 1 July 2017, foreign suppliers of digital services to Australian consumers — Netflix, Spotify, Apple, Google, and hundreds of smaller firms — have been required to register with the Australian Taxation Office, self-disclose their Australian sales, and remit GST. The regime is operational, uncontroversial, and has generated billions of dollars in revenue without trade dispute. The Dividend extends this existing pattern to a new domain: foreign AI suppliers register as Registered Suppliers with the Dividend Authority, disclose energy footprint under the international regime, and submit to ATO audit. The legal and administrative infrastructure is established. The Dividend adds subject matter, not architecture.</p>
+
+  <h4>Sovereign asset management — <em>Future Fund Act 2006</em></h4>
+  <p>Royal Assent 23 March 2006. The Act establishes the architecture for a Commonwealth-owned investment vehicle: an independent Board of Guardians (chair plus six members, five-year terms, statutorily required qualifications in investment, law, or corporate governance); a supporting management agency; a statutory Investment Mandate issued by the responsible Ministers; independence from government in investment decisions; and Commonwealth ownership of the fund at all times.</p>
+
+  <p>The Dividend Endowment is constituted directly on this template. In 2026, the Future Fund Board of Guardians model is the most proven piece of Commonwealth investment governance in existence — a sovereign wealth manager operating at institutional-investor scale, signed to the Santiago Principles on sovereign wealth fund governance, and responsible today for the Future Fund, the Medical Research Future Fund, the DisabilityCare Australia Fund, and the Housing Australia Future Fund.</p>
+
+  <h4>Barter scheme tax treatment — ATO Ruling GSTR 2003/14</h4>
+  <p>The credit ecosystem described in Component Two sits squarely within the ATO's existing doctrine on barter schemes conducted by trade exchanges. GSTR 2003/14 — operational since 2003 — governs the GST treatment of transactions where members of a scheme credit each other's accounts in exchange for goods or services, with each participant able to set their own conversion rate between scheme credits and the dollar value of their supplies. The doctrine already accommodates variable participant-set exchange rates: where the scheme's rules do not specify a conversion rate, the applicable rate is the one at which credits convert to the GST-inclusive market value of the supply. The Dividend credit ecosystem is an instance of a pattern the ATO has compliance infrastructure for.</p>
+
+  <h4>Market-access conditionality — ACMA and ASIC precedents</h4>
+  <p>The ACMA spectrum licensing regime and ASIC foreign provider registration framework establish that the Commonwealth may condition market access on registration, compliance, and reporting — without raising constitutional or trade-law concerns. The Dividend's Registered Supplier requirement (AI providers must register to supply Australian users commercially) sits within this established pattern.</p>
+
+  <h3>Trade law</h3>
+  <p>The Dividend does not violate Australia's trade-treaty obligations. This is the attack most commonly made by hostile commentators and most decisively answered on close examination.</p>
+
+  <p>Under the WTO, the General Agreement on Trade in Services, ANZTEC, DEPA, the Australia–US FTA, and the JAEPA, Australia is obliged to avoid discriminatory treatment of foreign service suppliers. The Dividend meets this obligation by applying identical rates to every supplier — Australian and foreign — assessed against an internationally-disclosed, independently-verifiable unit of measure. There is no preferential treatment for Australian suppliers. There is no targeting of foreign commercial activity. There is no offshore loophole.</p>
+
+  <p>The structural distinction from Digital Services Taxes is decisive and can be summarised in one sentence: <strong>DSTs tax the gross receipts of foreign firms from services supplied to domestic users; the Dividend charges all suppliers, Australian and foreign, for the commercial supply they make to Australians, assessed by energy footprint under the international regime.</strong> This distinction has been examined by the OECD in its multi-year work on DSTs, and the Dividend's structure falls outside the DST category on every criterion the OECD uses to identify one.</p>
+
+  <p>The operational model is the Netflix Tax. Foreign suppliers register, self-disclose, submit to audit, remit what's owed. Australia has been running this architecture uncontroversially for nine years. The Dividend extends the architecture to a new unit of assessment and a new domain. The trade-law objection is, on examination, already answered by the regime that has been operating without dispute since 2017.</p>
+
+  <h3>First mover</h3>
+  <p>No jurisdiction has yet charged AI commercial supply on commons-doctrine grounds. The EU is building out energy disclosure obligations under the AI Act but has not attached a charge to them. The UK's Digital Services Tax targets revenue rather than commons contribution and faces continuing international friction. The OECD's Pillar One and Pillar Two work addresses profit allocation, not commons extraction. The architectural move the Dividend proposes — adopt the international measurement regime, apply the charge on commons-doctrine grounds, distribute as citizen dividend and sovereign endowment — has not yet been made anywhere.</p>
+
+  <p>Australia is well-placed to make it. The precedents at its disposal — PRRT, the Netflix Tax, the Future Fund Act, the ATO barter-scheme framework — are among the cleanest in the Commonwealth for the architectural work this scheme requires. The window for first-mover positioning is not indefinite. The question of whether democratic states can capture value from AI at scale, on grounds defensible in trade law and durable across electoral cycles, will be settled in one direction or another within this decade. Australia can be the jurisdiction that answers it constructively, or can wait and implement whatever model emerges elsewhere.</p>
+</section>
+
+<!-- ───────────── GOVERNANCE ───────────── -->
+
+<section id="governance">
+  <div class="section-eyebrow"><span class="num">09</span><span class="label">Governance</span></div>
+  <h2>Architecture</h2>
+  <p class="lead">Three bodies carry the scheme. Each has a specific constitutional function, a defined independence mechanism, and a direct precedent in existing Commonwealth governance.</p>
+
+  <h3>The Dividend Authority</h3>
+  <p>The Authority is the regulator and administrator. Its functions: register providers, publish deemed energy rates, operate the audit regime, calculate and distribute monthly dividends, and report annually to Parliament.</p>
+
+  <p>It is structured as a portfolio agency — not a ministerial department — chosen deliberately so that regulatory decisions, especially the deemed-rate schedule, are made at arm's length from the government of the day. Independence here is not a nicety; it is the mechanism by which the scheme remains politically credible across electoral cycles.</p>
+
+  <p>The Authority's Commissioner is appointed by the Governor-General on the advice of the Treasurer, for a single seven-year term with statutory protection against removal except for cause. This mirrors the appointment architecture of the Commissioner of Taxation and the ACCC Chair — established Commonwealth practice for regulators requiring both independence and accountability. The Authority reports annually to Parliament, submits to Senate Estimates, and operates under the <em>Public Governance, Performance and Accountability Act 2013</em>.</p>
+
+  <h3>The Dividend Endowment</h3>
+  <p>The Endowment is a Commonwealth statutory body modelled directly on the Future Fund Act 2006. It holds and invests unredeemed credit value. It pays out to Australians at age 21 per the residency-weighted formula.</p>
+
+  <p>Its Board of Guardians — chair plus six members, appointed by the Treasurer and Minister for Finance for five-year terms — is constituted under the same template as the Future Fund Board. Section 38-equivalent qualifications apply: members must have substantial experience and standing in investing, investment management, corporate governance, business, or law. Members serve part-time, with remuneration set by the Remuneration Tribunal.</p>
+
+  <p>The Endowment operates under an Investment Mandate issued by the responsible Ministers, publicly available, amendable only through statutory process. Investment decisions are made independently by the Board; the Commonwealth retains ownership of the corpus at all times. This is the same structural pattern that has governed Australia's sovereign wealth management, without controversy, for two decades — a pattern that in 2026 oversees the Future Fund, the Medical Research Future Fund, the Disability Care Australia Fund, and the Housing Australia Future Fund.</p>
+
+  <h3>The Future Generations Advisory Panel</h3>
+  <p>The Advisory Panel is a statutory body of fifteen Australians aged 18–25, appointed for three-year staggered terms through a public nominations process. Its role is consultative: formal input on governance decisions affecting the Endowment's future beneficiaries, with the right to publish a dissenting report where disagreement arises.</p>
+
+  <p>The Panel is a voice, not a veto. Its presence in legislation is the mechanism by which the scheme maintains intergenerational legitimacy — the generation that will be the primary recipients of the Endowment has a formal seat at the table where decisions about that Endowment are made.</p>
+
+  <h3>Why a statutory body, not a trust</h3>
+  <p>The choice to constitute the Endowment as a Commonwealth statutory body rather than a trust is deliberate and carries three specific legal advantages.</p>
+
+  <p><strong>Constitutional cleanliness.</strong> Statutory bodies are created by Parliament under established heads of power, with clear lines of accountability to Parliament. Trust structures raise questions of trust law, trustee duties, and the identity of beneficiaries that invite litigation. The Future Fund's statutory-body structure has never been constitutionally challenged; equivalent trust structures have repeatedly faced beneficiary disputes.</p>
+
+  <p><strong>Amendability.</strong> The scheme can evolve through ordinary parliamentary process (subject to the entrenchment mechanisms below). A trust would require court-supervised variation — expensive, slow, and subject to judicial discretion.</p>
+
+  <p><strong>Governance transparency.</strong> Statutory bodies publish annual reports, submit to parliamentary committee scrutiny, and operate under the <em>Public Governance, Performance and Accountability Act 2013</em>. Trusts have no equivalent accountability architecture. For a fund that will grow to tens of billions of dollars over two decades, the accountability architecture matters.</p>
+
+  <h3>Entrenchment</h3>
+  <p>Core provisions — the distribution formula, the age-21 payout trigger, the Advisory Panel's statutory voice, the levy's progressive structure — are protected through two parliamentary mechanisms: absolute-majority amendment requirement in both houses, and a mandatory 180-day public consultation period before any amendment may proceed.</p>
+
+  <p>These are ordinary parliamentary mechanisms, not constitutional entrenchment. The scheme remains amendable under serious deliberation — but not by casual legislative moment. This is the correct tier of protection for a policy that should evolve as circumstances change, but should not be quietly dismantled.</p>
+</section>
+
+<!-- ───────────── TIMING ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">10</span><span class="label">Timing</span></div>
+  <h2>Launch in 2030</h2>
+  <p class="lead">Not sooner. Four reasons, each load-bearing.</p>
+
+  <h3>Economic base</h3>
+  <p>Industry growth between now and 2030 substantially increases the Dividend's per-citizen yield at launch. Launched in 2027, the scheme delivers perhaps ten dollars per adult per month initially — below the threshold at which citizens perceive it as real rather than nominal. Launched in 2030, the first month's dividend covers a mid-tier AI subscription outright for every Australian adult. That difference matters enormously: first impressions compound politically. A dividend that arrives as real is defended as real. A dividend that arrives as token is mocked and eventually repealed.</p>
+
+  <h3>Measurement infrastructure</h3>
+  <p>The EU AI Act's energy disclosure obligations for general-purpose AI providers entered into application on 2 August 2025 and will have been operating for five years by launch. Google's published Gemini methodology is becoming the de facto international reference. The ISO/IEC sustainability standard is expected by 2028, with Commission-issued measurement methodologies following under EU delegated acts. Launching in 2030 lets Australia <em>adopt</em> a mature, internationally-verified measurement regime rather than invent one. That is the right posture for a mid-sized economy. Leading on AI measurement methodology is the work of the US, the EU, and ISO — Australia's leverage is in intelligent alignment.</p>
+
+  <h3>Political timing</h3>
+  <p>The coming Commonwealth electoral cycle provides a natural window for consultation and drafting. Legislation passed in 2028 gives the Authority and Endowment eighteen months to stand up operations before first distributions in 2030. This is the pace at which serious Commonwealth reforms have historically been implemented — fast enough to maintain political momentum, slow enough to get the detail right.</p>
+
+  <h3>Design runway</h3>
+  <p>Operational detail — merchant payment integration, audit procedure, endowment investment mandate calibration, deemed-rate schedule, Advisory Panel nominations process — must be resolved carefully. The lead time allows each of these to be worked out with stakeholders, piloted against real operators, and corrected, rather than improvised at launch.</p>
+
+  <h3>The phased plan</h3>
+  <p><strong>2026–2027.</strong> Public consultation. Formal development of the Commons Doctrine with senior legal academics and former Commonwealth law officers. Parliamentary Budget Office costing. Targeted engagement with AI providers, anchor-merchant industry bodies, Treasury, and the Australian Taxation Office. Industry roundtables under Chatham House rules to test design assumptions.</p>
+
+  <p><strong>2028.</strong> Legislation drafted, introduced, and passed. The Dividend Authority Act and the Dividend Endowment Act move together through Parliament. Bipartisan support on the Labor industry wing, Coalition economic moderates, and crossbench is the governing coalition assembled during 2026–27 consultation.</p>
+
+  <p><strong>2029.</strong> Operational stand-up. The Dividend Authority is constituted under its enabling legislation and staffs up. The Board of Guardians is appointed. The audit regime is tested with participating providers. Merchant integration is piloted in one or two Australian cities. The Advisory Panel's first cohort is nominated through public process. Deemed-rate schedule is published for industry comment and finalised before launch.</p>
+
+  <p><strong>2030.</strong> Launch. First monthly dividend paid. Endowment opens to receive sweep.</p>
+</section>
+
+<!-- ───────────── NEXT STEPS ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="num">11</span><span class="label">Next Steps</span></div>
+  <h2>Invitation</h2>
+  <p>This brief is offered to initiate conversation, not conclude it. Specifically, the author seeks:</p>
+
+  <ul class="proposal-list">
+    <li>Feedback from stakeholders familiar with trade, industry, and Treasury frames.</li>
+    <li>Introductions to senior legal academics or former Commonwealth law officers suitable to develop the <em>Commons Doctrine</em> formally.</li>
+    <li>Engagement across the Labor industry wing, independents, and Coalition economic moderates.</li>
+    <li>Contact with the Parliamentary Budget Office for formal costing at an appropriate point in development.</li>
+    <li>Early engagement from anchor-merchant industry bodies and Australian-founded AI companies below the <em>de minimis</em> threshold.</li>
+  </ul>
+
+  <p>The full proposal, a technical primer covering the eight domains relevant to defence of the scheme, and the steelman responses to the ten anticipated attacks are available on request.</p>
+</section>
+
+<hr class="ornament">
+
+<!-- ───────────── AUTHOR NOTE ───────────── -->
+
+<section>
+  <div class="section-eyebrow"><span class="label" style="padding-bottom: 0;">About the Author</span></div>
+  <p>Michael Bois is an Adelaide-based founder and operator. A prior venture, Watt Next, designed a kilowatt-hour-to-credit redemption system structurally analogous to the Dividend. His current operating businesses implement AI in commercial settings directly. The proposal emerges from practitioner engagement with energy metering, merchant integration, digital-first product design, and the economics of customer-facing services.</p>
+  <p>The proposal is offered in the tradition of citizen-developed policy: an individual with directly relevant experience, proposing a system, inviting institutional development.</p>
+</section>
+
+<!-- ───────────── FOOTER ───────────── -->
+
+<div class="footer">
+  Australian AI Dividend · Policy Brief · April 2026<br>
+  <span style="font-weight: 400; text-transform: none; letter-spacing: 0.04em; font-style: italic; font-size: 11px;">A working document. Comments and challenges actively sought.</span>
+</div>
+
+</div>
+</body>
+</html>
