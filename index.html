@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
@@ -169,6 +168,104 @@ h1 {
 }
 
 .thesis p em { font-style: italic; color: var(--accent); }
+
+/* ───── EXECUTIVE SUMMARY ───── */
+
+.exec-summary {
+  margin: 56px -12px 72px;
+  padding: 44px 52px;
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent);
+  position: relative;
+}
+
+.exec-summary::before {
+  content: 'Executive Summary';
+  position: absolute;
+  top: -14px;
+  left: 48px;
+  background: var(--bg);
+  padding: 4px 12px;
+  font-family: var(--display);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.exec-block { margin-bottom: 32px; }
+.exec-block:last-child { margin-bottom: 0; }
+
+.exec-block h3 {
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.exec-block p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.exec-block p:last-child { margin-bottom: 0; }
+
+.exec-block p strong { font-weight: 600; color: var(--ink); }
+
+.exec-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exec-block li {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.55;
+  padding: 10px 0 10px 24px;
+  position: relative;
+  border-bottom: 1px dotted var(--rule-soft);
+  color: var(--ink);
+}
+
+.exec-block li:last-child { border-bottom: none; }
+
+.exec-block li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 12px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.exec-block li strong {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.exec-closer {
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "SOFT" 50, "opsz" 72;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
 
 /* ───── SECTIONS ───── */
 
@@ -386,7 +483,7 @@ tr:last-child td { border-bottom: none; }
 
 .chart-grid {
   display: grid;
-  grid-template-columns: 72px 1fr 80px;
+  grid-template-columns: 72px 1fr 100px;
   gap: 8px;
   align-items: center;
   margin-bottom: 10px;
@@ -563,6 +660,14 @@ tr:last-child td { border-bottom: none; }
   line-height: 1.6;
 }
 
+.attack-response p {
+  margin-bottom: 12px;
+}
+
+.attack-response p:last-child {
+  margin-bottom: 0;
+}
+
 /* ───── LISTS ───── */
 
 ul.proposal-list { list-style: none; margin: 20px 0; }
@@ -613,12 +718,17 @@ ul.proposal-list li::before {
   .thesis p { font-size: 19px; }
   .in-brief { margin: 0 -10px 40px; padding: 24px 22px; }
   .in-brief p { font-size: 15px; }
+  .exec-summary { margin: 40px -10px 56px; padding: 32px 24px; }
+  .exec-summary::before { left: 20px; font-size: 10px; letter-spacing: 0.18em; }
+  .exec-block p { font-size: 16px; }
+  .exec-block li { font-size: 15px; }
+  .exec-closer { font-size: 19px; }
   h2 { font-size: 28px; }
   h3 { font-size: 20px; }
   .mechanism-block { padding: 22px 24px; }
   .flywheel-wrap { margin: 28px -20px; padding: 28px 8px; }
   .chart-wrap { padding: 20px 16px; }
-  .chart-grid { grid-template-columns: 56px 1fr 70px; font-size: 14px; }
+  .chart-grid { grid-template-columns: 56px 1fr 86px; font-size: 14px; }
   .stakeholder { padding: 22px 24px; }
   .masthead { font-size: 10px; flex-wrap: wrap; gap: 8px; }
   th, td { padding: 10px 16px; font-size: 15px; }
@@ -637,6 +747,12 @@ ul.proposal-list li::before {
   .thesis p { font-size: 13pt; }
   .in-brief { margin: 14pt 0; padding: 12pt 18pt; page-break-inside: avoid; }
   .in-brief p { font-size: 10.5pt; }
+  .exec-summary { margin: 14pt 0; padding: 14pt 18pt; page-break-inside: avoid; }
+  .exec-summary::before { left: 16pt; font-size: 8pt; }
+  .exec-block { margin-bottom: 14pt; }
+  .exec-block p { font-size: 11pt; }
+  .exec-block li { font-size: 10.5pt; padding: 6pt 0 6pt 18pt; }
+  .exec-closer { font-size: 13pt; }
   h2 { font-size: 18pt; page-break-after: avoid; }
   h3 { font-size: 13pt; page-break-after: avoid; }
   section { page-break-before: always; page-break-inside: auto; margin-bottom: 0; padding-top: 4pt; }
@@ -673,41 +789,78 @@ ul.proposal-list li::before {
   <div class="byline">By <strong>Michael Bois</strong> &nbsp;·&nbsp; For consultation with political, industry, and institutional stakeholders</div>
 </div>
 
-<!-- ───────────── IN BRIEF ───────────── -->
+<!-- ───────────── EXECUTIVE SUMMARY ───────────── -->
 
-<div class="in-brief">
-  <div class="eyebrow">In Brief</div>
-  <p><strong>Proposal.</strong> The Dividend charges AI providers for the commercial supply of AI services to Australian users, assessed against the energy footprint of that supply under the emerging international disclosure regime. The charge is progressive and banded — the smallest suppliers (Australian startups, academic research, open-source projects) pay nothing; the largest hyperscale operators pay the highest marginal rate.</p>
-  <p><strong>Distribution.</strong> Revenue distributes monthly to every Australian adult as ecosystem credit — usable across AI providers and Registered Australian merchants at each participant's advertised rate. Unredeemed credit sweeps to a sovereign Endowment modelled on the <em>Future Fund Act 2006</em>, paying out a lump sum to every Australian at age 21. At maturity the scheme channels approximately A$4 billion per month to Australian households and the Endowment combined.</p>
-  <p><strong>Launch.</strong> Consultation 2026–27, legislation 2028, operational stand-up 2029, first distribution 2030 — timed to adopt rather than invent international AI measurement standards.</p>
-  <p><strong>Ask.</strong> Feedback from stakeholders in trade, industry, and Treasury frames; introductions to legal academics and former Commonwealth law officers to formalise the Commons Doctrine; engagement across the political spectrum for the consultation phase.</p>
-</div>
+<div class="exec-summary">
 
-<!-- ───────────── THESIS ───────────── -->
+  <div class="exec-block">
+    <h3>The Problem</h3>
+    <p>Artificial intelligence was not built from nothing. It was built on the collective output of the world's literate populations — every article, every book, every scientific paper, every line of code, every photograph, every conversation on the open internet. It was extracted without compensation. A handful of foreign companies scraped the open internet, trained commercial products on what they found, and now sell those products back to the populations whose work made them possible. Whether that constitutes theft is a question the courts have yet to settle. Whether it constitutes a debt is not.</p>
 
-<div class="thesis">
-  <p>The Australian AI Dividend charges AI companies for the commercial supply of AI services to Australian users — measured by the energy footprint of that supply, recognising Australia's contribution to AI through its data, users, and infrastructure. Revenue returns as monthly credit to every Australian adult, and compounds into a sovereign endowment that pays out to every Australian at age twenty-one.</p>
-  <p style="margin-top: 18px; font-size: 19px; line-height: 1.45;">It uses tools the Commonwealth already owns. It rests on legal architecture that has worked, without controversy, for forty years. It arrives <em>with</em> the emerging international AI measurement regime, not against it. And it delivers something Australians currently do not have: a direct, ownable share in one of the largest economic transitions of the century.</p>
+    <p>Australia is not unique in contributing to this. Every country with a presence on the open web has had its output ingested into the training corpus; every literate population is in there somewhere. But Australia has standing the way a coastal state has standing over its fisheries — not because the fish are Australian, but because commercial extraction from the waters is. And the extraction is not a past event. Every day an Australian opens a subscription, asks a model a question, integrates an AI tool into their work, the commons is drawn on again. Every month the industry operates commercially in this country, it draws on what Australia contributes. The question the Dividend answers is not whether Australians are owed compensation for what was taken once. It is what the terms should be for what continues to be taken, every day, from here.</p>
+
+    <p>The turbulence is already beginning. Journalists, graphic designers, illustrators, translators, junior coders, customer service workers — occupations that contributed their collective output to the open web for two decades, and whose output trained the very models now automating their work. <strong>The training corpus and the displacement list are the same list.</strong></p>
+
+    <p><strong>How will governments respond?</strong> There are two options on the table, and both are bad.</p>
+
+    <p><strong>The first is to tax AI companies directly.</strong> Corporate income taxes. Digital services taxes. Sectoral levies. Every one of those instruments has the same structural flaw: it taxes the industry, and the industry responds by raising end-user prices. Subscriptions get more expensive. The Australians first priced out of AI are the ones who can least afford to be — workers displaced by AI-driven productivity gains, single-income households where a subscription is a real trade-off, young people entering the workforce without capital to buy the tools they need to compete. Taxation as currently conceived transfers the cost from the industry to the most exposed citizens. That is not a policy outcome. It is a policy failure, imposed on the people a policy is meant to protect.</p>
+
+    <p><strong>The second is to do nothing.</strong> Let the productivity gains flow offshore. Let Australian IP continue to underwrite an industry that returns no value to the country that helped build it. This is the default option. It is also, quietly, the most expensive option Australia can choose — because the cost is the country's share of the transition, forever.</p>
+
+    <p>Tax AI, and the poorest pay. Don't tax AI, and Australia gets nothing back for its share of the commons. That is the dilemma every government now faces. It is the dilemma the Australian AI Dividend is designed to resolve.</p>
+  </div>
+
+  <div class="exec-block">
+    <h3>The Recommendation</h3>
+    <p>Within its opening years, the Australian AI Dividend pays for a mid-tier AI subscription outright for every Australian adult — meaning universal access to the transition from the opening years onward. At maturity, it channels approximately <strong>A$4 billion per month</strong> to Australian households, roughly <strong>A$200 per adult, every month</strong>, with Australian children accumulating a share across their childhood, delivered as a lump sum at 21 — a generational inheritance built from the industry they grew up using.</p>
+
+    <p>The mechanism: charge AI companies for the commercial supply of AI services to Australians, measured by the energy footprint of that supply — the unit the industry is already disclosing under EU and ISO regimes. Australian startups, academic research, and open-source projects pay nothing. The largest hyperscale operators pay the highest rate. The architecture uses tools the Commonwealth already owns. No new constitutional territory. No discriminatory tax architecture.</p>
+
+    <p><strong>The Australian AI Dividend doesn't work like a conventional tax, and that's the point.</strong> Conventional taxes are assessed on revenue, so providers raise prices to protect their margin and the cost lands on customers. The Dividend is assessed on energy — the kilowatt-hours burned serving Australian users. What a provider charges its customers has no bearing on what it owes. Pricing is a competitive-market decision, set against every other provider in the Australian market; the levy is set by the meter. The two are independent.</p>
+
+    <p>That independence is what makes universal access possible. Power users — businesses, developers, high-volume commercial integrators — will pay for the AI they consume, as they do now. But for the ordinary Australian who wants a capable AI assistant for everyday use, the monthly Dividend covers it. At current Australian consumer pricing, Grok runs A$12 a month and Google AI Plus A$12.99, with Microsoft Copilot at A$16, ChatGPT Plus at around A$30, and Claude Pro at A$34. <strong>Within the scheme's opening years, the Dividend covers Grok and Google AI Plus outright for every Australian adult. As the scheme matures, it covers any of them.</strong> Average Australians aren't charged anything extra; they get the tools for free, funded by the industry's heaviest users. <strong>The Australian AI Dividend turns AI from a subscription into a public utility.</strong></p>
+
+    <p><strong>And the AI industry itself has reason to welcome it.</strong> The alternative — conventional corporate taxation, digital services taxes, sectoral levies — delivers neither stability nor predictability. It delivers a decade of fragmented rule-making across jurisdictions, each instrument fought in turn, each outcome uncertain. The Dividend offers the opposite: one federal framework, set once and indexed over time, built on legal architecture that has worked in Australia without controversy for forty years. For OpenAI, Anthropic, Google, and Microsoft, Australia becomes the jurisdiction that got the architecture right — not the worst thing that can happen here, the best thing that can happen here.</p>
+  </div>
+
+  <div class="exec-block">
+    <h3>The Basis for the Recommendation</h3>
+    <ul>
+      <li><strong>Australia materially contributes to global AI.</strong> Australian data, users, language, cultural output, and six decades of public research are inputs to every commercial AI model. Commercial AI in Australia is not possible without them.</li>
+      <li><strong>The Commonwealth already charges for commons extraction.</strong> PRRT has done it for petroleum since 1988. The Dividend applies the same constitutional pattern to AI.</li>
+      <li><strong>The measurement unit is internationally established.</strong> The EU AI Act has mandated energy-footprint disclosure for general-purpose AI models since August 2025; ISO/IEC TR 20226 on AI environmental sustainability was published in July 2025. Australia adopts the unit, applies deemed rates against industry disclosures for the scheme's opening years, and transitions to direct measurement as the international regime matures. The same kind of architectural move Australia made when it extended GST to imported digital services in 2017 — adopt the established principle, build the Australian apportionment.</li>
+      <li><strong>The administrative infrastructure already exists.</strong> The Netflix Tax has handled foreign digital suppliers' Australian obligations since 2017. The Future Fund has governed Commonwealth sovereign wealth since 2006. The ATO barter-scheme framework has governed credit-exchange systems since 2003.</li>
+      <li><strong>The political window is closing.</strong> The question of whether democratic states can capture value from AI at scale will be settled in one direction or another this decade. The country that moves first defines the template.</li>
+    </ul>
+  </div>
+
+  <div class="exec-block">
+    <h3>What This Document Is</h3>
+    <p>A working policy brief, offered for consultation. Feedback from stakeholders in trade, industry, Treasury, and the legal academy is actively sought. Full legal framework, mechanism design, economic modelling, governance architecture, and responses to anticipated attacks follow.</p>
+  </div>
+
+  <div class="exec-closer">This is not a levy to punish. It is a levy to participate.</div>
+
 </div>
 
 <!-- ───────────── STAKES ───────────── -->
 
 <section>
   <div class="section-eyebrow"><span class="num">01</span><span class="label">The Stakes</span></div>
-  <h2>A share in the AI future</h2>
-  <p class="lead dropcap">On the first of every month, every Australian adult opens the Dividend app and sees their balance grow. The number that appears is their share of that month's receipts from the AI industry — money paid by the companies selling AI to Australians, returned to the Australians whose data, language, economy, and public investment make that AI commercially valuable. For Australian children, the same money compounds quietly, year by year, into a sovereign endowment that pays out at twenty-one.</p>
+  <h2>Australia is about to miss the largest economic transition of the century.</h2>
+  <p class="lead">The productivity gains from AI are real and they are large. They are also, at this moment, entirely foreign-owned. Every Australian who uses AI pays a subscription to a company headquartered abroad. Every Australian business that integrates AI into its operations transfers value to foreign shareholders. Every Australian child learning with AI is generating economic return for people who will never set foot in this country. This is not a hypothetical future. It is what is happening now, and what will happen on a larger scale every year from here.</p>
 
-  <p>This is the Australian AI Dividend: a share in the AI future for every Australian, by design.</p>
+  <p>The trajectory is clear. By 2035, a small number of foreign-owned AI systems will have reshaped Australian work, commerce, and daily life. The Australian economy will run on AI that Australians do not own. The productivity gains will be real. The returns will be offshore. And unlike every previous technological transition in Australian history — from the mining boom to the digital economy to the rise of platform companies — there is no mechanism currently in place to ensure Australians share in the value their country helps create.</p>
 
-  <p>The stakes for getting this right are large. By 2035, a small number of foreign-owned AI systems will have reshaped Australian work, commerce, and daily life. The productivity gains are real and large. The question is not <em>whether</em> the transition happens — it is happening — but who owns the value it creates.</p>
+  <p>The question is not <em>whether</em> this transition happens. It is happening. The question is who owns the value it creates. Three answers are on the table.</p>
 
-  <p>Three answers are on the table.</p>
+  <p><strong>Do nothing.</strong> Every dollar of Australian-generated AI surplus flows to foreign shareholders. No Australian household has any direct participation in the growth of an industry that will increasingly define Australian economic life. This is the default. This is where current trajectory leads. It is also, quietly, the most expensive option Australia can choose — because it costs the country its share of the transition, forever.</p>
 
-  <p><strong>Do nothing</strong>, and the answer defaults to foreign shareholders. Every dollar of Australian-generated AI surplus leaves the country. No Australian household has any direct participation in the growth of an industry that will increasingly define Australian economic life. That is where we are today. That is where current trajectory leads.</p>
+  <p><strong>Regulate sectorally</strong>, on the European model. A decade of contested rulemaking. Licensing regimes for this industry, restrictions for that one. New rules each time a model improves. Old rules fought again at every revision. Slow. Painful. Prone to capture. And — crucially — with no positive economic return for citizens. <em>Regulation distributes cost, not benefit.</em></p>
 
-  <p><strong>Regulate sectorally</strong>, on the European model, and the answer is a decade of contested rulemaking: licensing regimes for this industry, restrictions for that one, new rules each time a model improves, old rules fought again at every revision. Slow. Painful. Prone to capture. And — crucially — with no positive economic return for citizens. Regulation distributes cost, not benefit.</p>
+  <p><strong>The Dividend</strong> delivers on the ownership commitment through a market mechanism. It does not regulate AI. It does not slow AI. It does not pick winners. It charges AI companies for the commercial supply of their services to Australians — assessed against the energy footprint of that supply — and returns the proceeds to the citizens on whose commons the industry draws. It arrives <em>with</em> the emerging international measurement regime, not against it. It uses tools the Commonwealth already owns. It rests on legal architecture that has worked, without controversy, for forty years.</p>
 
-  <p><strong>The Dividend</strong> delivers on the ownership commitment through a market mechanism. It does not regulate AI. It does not slow AI. It does not pick winners. It charges AI companies for the commercial supply of their services to Australians — assessed against the energy footprint of that supply — and returns the proceeds to the citizens on whose commons the industry draws.</p>
+  <p>This is a generational decision. Australia can be the jurisdiction that builds the template democracies use to share in the AI transition — or it can be a customer of whatever template emerges elsewhere. The window to choose is this decade. The cost of choosing late is the share itself.</p>
 
   <p class="pullquote">This is not a levy to punish. It is a levy to participate.</p>
 </section>
@@ -725,7 +878,11 @@ ul.proposal-list li::before {
 
   <h3 style="margin-top: 36px;">Four reasons energy is the right base</h3>
 
-  <p><strong>Industry already discloses it.</strong> Under the EU AI Act, providers of general-purpose AI models have been required to document the known or estimated energy consumption of their models since 2 August 2025, with Commission-issued measurement methodologies following. Google published its Gemini per-query energy figure in 2025 and is establishing a de facto reference. The ISO/IEC standard for AI sustainability is in final approval. The disclosure regime is operational internationally. Australia charging on it requires no new primary disclosure infrastructure — only an administrative framework to receive, verify, and act on figures providers are already producing.</p>
+  <p><strong>Industry already discloses the unit.</strong> Under the EU AI Act, providers of general-purpose AI models have been required to document the energy consumption of their models since 2 August 2025 — training energy at the model level, disclosed via the Annex XI technical documentation regime. Google published its Gemini per-prompt energy methodology in August 2025, reporting 0.24 watt-hours per median text query and establishing a de facto reference for inference-side disclosure. ISO/IEC Technical Report 20226, covering environmental sustainability aspects of AI systems, was published in July 2025, with full International Standards on AI training efficiency and sustainability reporting scheduled through 2026–2028. The unit — energy footprint — is the measure the international regime is converging on for AI operational impact.</p>
+
+  <p>What the international regime does not yet do is apportion that energy to specific jurisdictions. Training energy is disclosed per model, globally. Per-query figures are disclosed as global averages. The Australian share of each provider's inference energy is not a figure any international body currently publishes. That apportionment is the work Australia does — the same kind of architectural move Australia made in 2017 when it extended GST to imported digital services. The global principle was established internationally; the Australian application was built here. The Dividend follows the same pattern: adopt the international unit, extend it with Australian apportionment methodology, phase in direct measurement as the international regime matures.</p>
+
+  <p>For the scheme's opening years, the Dividend Authority publishes deemed rates — administrative estimates of Australian inference energy derived from providers' global disclosures and Australian market factors. This is not a placeholder while waiting for the international regime to catch up. It is the scheme's initial assessment method, with direct Australian precedent in FBT statutory formulas and fuel tax credits, both of which have operated on deemed-rate principles for decades. As the international disclosure regime matures and Australian apportionment methodology is piloted and refined, the scheme transitions to direct measurement — per §03 Mechanism's three-phase assessment regime.</p>
 
   <p><strong>It scales with commercial activity.</strong> More supply to Australian users means more energy consumed by that supply. The unit grows with the thing being measured. A provider who serves twice as much Australian inference as another pays twice as much. There is no gaming opportunity in the unit itself.</p>
 
@@ -904,7 +1061,7 @@ ul.proposal-list li::before {
 
   <p>The loops reinforce. Provider revenue drives inference volume, which drives levy receipts, which drives credit issuance, which drives citizen demand for participating services, which drives provider revenue. Merchant participation attracts credit-paying customers; citizen allocation patterns attract merchants. Credit not spent at month's end sweeps to the Endowment, where it compounds across decades before delivering meaningful capital to young Australians at twenty-one — the age at which a lump sum most changes a life trajectory.</p>
 
-  <p class="pullquote">No stakeholder gives up something material for the scheme to work. That is the engineering test the design was built to pass.</p>
+  <p class="pullquote">Every stakeholder pays something and gets something greater. That is the engineering test the design was built to pass.</p>
 </section>
 
 <!-- ───────────── MODELLING ───────────── -->
@@ -921,32 +1078,34 @@ ul.proposal-list li::before {
 
     <div class="chart-grid">
       <div class="year">Year 3</div>
-      <div class="bar-track"><div class="bar" style="width: 8%;"></div></div>
-      <div class="value">$15</div>
+      <div class="bar-track"><div class="bar" style="width: 6%;"></div></div>
+      <div class="value">$10–$20</div>
     </div>
     <div class="chart-grid">
       <div class="year">Year 6</div>
-      <div class="bar-track"><div class="bar" style="width: 25%;"></div></div>
-      <div class="value">$50</div>
+      <div class="bar-track"><div class="bar" style="width: 20%;"></div></div>
+      <div class="value">$35–$65</div>
     </div>
     <div class="chart-grid">
       <div class="year">Year 9</div>
-      <div class="bar-track"><div class="bar" style="width: 50%;"></div></div>
-      <div class="value">$100</div>
+      <div class="bar-track"><div class="bar" style="width: 41%;"></div></div>
+      <div class="value">$75–$130</div>
     </div>
     <div class="chart-grid">
       <div class="year">Year 12</div>
-      <div class="bar-track"><div class="bar" style="width: 100%;"></div></div>
-      <div class="value">$200</div>
+      <div class="bar-track"><div class="bar" style="width: 80%;"></div></div>
+      <div class="value">$150–$250</div>
     </div>
 
     <div class="chart-note">The trajectory compounds three effects: industry growth (inference volume), convergence of deemed rates toward actual measurement (pricing accuracy), and the progressive banded structure capturing a rising share of hyperscale operation. At maturity the scheme channels approximately <strong>A$4 billion per month</strong> in credit to Australian adults, of which a portion is spent through the ecosystem and the remainder sweeps to the Endowment — around <strong>A$48 billion annualised</strong>.</div>
   </div>
 
-  <h3>What the first years actually buy</h3>
-  <p>It is tempting to read the early-year figures — $15, $20, $50 — as modest. They are, in absolute terms. The framing misses the point.</p>
+  <p><strong>What moves the trajectory within the ranges.</strong> Three working assumptions determine where within each range the scheme actually lands: industry inference growth, band-calibration accuracy, and citizen redemption rate. Faster industry growth and higher redemption shift the per-adult figure upward within the range; slower growth and lower redemption shift it down. Formal Treasury and Parliamentary Budget Office calibration against real industry data will resolve these ranges to narrower point estimates. Until that work is complete, ranges are the honest way to describe what the scheme delivers.</p>
 
-  <p>At present Australian consumer pricing, a mid-tier AI subscription — Google AI Plus, ChatGPT Go — runs A$12.99 per month. A premium subscription — Google AI Pro, ChatGPT Plus, Claude Pro — runs A$32.99 to A$35. <strong>The early-year Dividend buys a mid-tier AI subscription outright and substantially subsidises premium.</strong> For the median Australian — someone who wants AI to help write an email, plan a trip, brainstorm a gift for their partner's birthday, sort a recipe — the mid-tier tools are capable and the Dividend covers them in full. No out-of-pocket cost.</p>
+  <h3>What the first years actually buy</h3>
+  <p>It is tempting to read the early-year figures — $10–$20, $35–$65 — as modest. They are, in absolute terms. The framing misses the point.</p>
+
+  <p>At present Australian consumer pricing, a mid-tier AI subscription — Grok at A$12, Google AI Plus at A$12.99, ChatGPT Go at A$12.99, Microsoft Copilot at A$16 — is fully covered once the Dividend crosses that threshold, which working assumptions place within the scheme's opening years. Premium subscriptions — ChatGPT Plus around A$30, Claude Pro A$34 — are substantially subsidised at that point and fully covered as the scheme matures. For the median Australian — someone who wants AI to help write an email, plan a trip, brainstorm a gift for their partner's birthday, sort a recipe — the mid-tier tools are capable and the Dividend covers them in full once it reaches that level. No out-of-pocket cost.</p>
 
   <p><em>The industry does not make its money from that user.</em> The industry makes its money from power users: businesses, developers, creative professionals, high-volume commercial applications. Those users pay many hundreds of dollars a month; their personal Dividend is a rounding error in their AI spend. The scheme is engineered around this asymmetry. The light user is substantially funded by the Dividend. The heavy commercial user contributes in proportion to their consumption, as they do today.</p>
 
@@ -1014,12 +1173,19 @@ ul.proposal-list li::before {
 
   <div class="attack">
     <div class="attack-claim">Measurement is impossible.</div>
-    <div class="attack-response">The usual first objection, and the most easily answered. The measurement regime already exists — built by the EU, Google, and ISO/IEC, not by Australia. Under the EU AI Act, providers of general-purpose AI models have been required to document their energy footprint since August 2025. Google published its Gemini per-query methodology in 2025. The ISO/IEC standard for AI sustainability is in final approval. By the Dividend's 2030 launch, the international regime will have been operational for five years with Commission-issued measurement methodologies. Australia adopts. Australia does not invent. Enforcement uses the Australian Taxation Office's established audit capacity extended to a new domain, with direct precedent in PRRT, FBT statutory formulas, and fuel tax credits. For the minority onshore case, AEMO and NGER already capture facility-level energy data. The attack assumes a regulator inventing measurement from scratch; the actual architecture is formulaic, internationally aligned, and externally auditable.</div>
+    <div class="attack-response">
+      <p>The usual first objection, answered in two parts. The unit is internationally settled: the EU AI Act has required general-purpose AI providers to disclose training energy since August 2025, Google published its Gemini per-prompt inference methodology in August 2025 (0.24 watt-hours per median text query), and ISO/IEC TR 20226 on AI environmental sustainability was published in July 2025. By the Dividend's 2030 launch, the international regime will have been operational for five years and the first full International Standards on AI training efficiency and sustainability reporting will have followed. The question is not whether energy can be measured — it is being measured, by the industry itself, under internationally agreed frameworks.</p>
+      <p>The apportionment work — allocating each provider's global inference energy to the Australian share — is built here, by Australia, using the same kind of architectural move that extended GST to imported digital services in 2017. For the scheme's opening years, the Dividend Authority publishes deemed rates derived from providers' global disclosures and Australian market factors, with direct precedent in the FBT statutory formulas and fuel tax credits that have operated on deemed-rate principles for decades. The scheme transitions to direct measurement as the international regime matures. Enforcement uses the Australian Taxation Office's established audit capacity, with direct precedent in PRRT. For the minority onshore case, AEMO and NGER already capture facility-level energy data. The architecture is formulaic, internationally aligned, and externally auditable.</p>
+    </div>
   </div>
 
   <div class="attack">
     <div class="attack-claim">It violates our trade agreements.</div>
-    <div class="attack-response">The Dividend is not a Digital Services Tax. DSTs tax the gross receipts of foreign firms from services supplied to domestic users — the structure the OECD has spent a decade disputing. The Dividend charges all suppliers, domestic and foreign, identical rates assessed against an industry-disclosed, internationally-aligned unit of measure. No discrimination. No preferential treatment. No offshore loophole. The legal foundation is the Commons Doctrine: Australia's contribution to AI, through its data, users, and infrastructure, establishes sovereign authority to charge for the commercial supply drawing on that commons. The operational model for foreign suppliers is the GST on imported digital services — the "Netflix Tax" — which has handled Australian obligations on Netflix, Spotify, Apple, and hundreds of foreign digital firms since July 2017, without trade dispute. The Dividend extends this existing, operational, uncontroversial Australian regime to a new domain. Trade law experts will recognise the structure on sight.</div>
+    <div class="attack-response">
+      <p>The Dividend is not a Digital Services Tax. DSTs tax the gross receipts of foreign firms from services supplied to domestic users — the structure the OECD has spent a decade disputing, and the structure that saw Canada's DST withdrawn under US pressure in 2025. The Dividend charges all suppliers, domestic and foreign, identical rates assessed against an industry-disclosed, internationally-aligned unit of measure. There is no preferential treatment of Australian suppliers and no offshore loophole.</p>
+      <p>The deeper trade-law answer is structural. A facially neutral measure can be challenged as de facto discriminatory if its burden falls disproportionately on foreign suppliers in a way that tracks nationality rather than a legitimate policy basis. The Dividend's progressive band structure is calibrated to operational scale, not to nationality. At launch, the top band will in practice be populated predominantly by foreign hyperscalers — because hyperscale AI infrastructure is currently concentrated in a small number of globally-capitalised firms, and that concentration reflects international capital-market reality, not Australian policy. The band structure charges the scale, whoever produces it. Over the scheme's lifetime, as AI infrastructure scales and the threshold reaches further down the industry, the top band captures any serious commercial participant in the Australian market — foreign, domestic, or mixed. The structure's policy basis is commons-extraction intensity measured by operational scale, which is a legitimate and long-recognised basis for progressive charging.</p>
+      <p>The operational model for foreign suppliers is the GST on imported digital services — the "Netflix Tax" — which has handled Australian obligations on Netflix, Spotify, Apple, and hundreds of foreign digital firms since July 2017, without trade dispute. The Dividend extends this existing, operational, uncontroversial Australian regime to a new domain, grounded in the Commons Doctrine: Australia's contribution to AI, through its data, users, and infrastructure, establishes sovereign authority to charge for the commercial supply drawing on that commons. Trade law experts will recognise the structure on sight.</p>
+    </div>
   </div>
 
   <div class="attack">
@@ -1097,13 +1263,17 @@ ul.proposal-list li::before {
   <p>The ACMA spectrum licensing regime and ASIC foreign provider registration framework establish that the Commonwealth may condition market access on registration, compliance, and reporting — without raising constitutional or trade-law concerns. The Dividend's Registered Supplier requirement (AI providers must register to supply Australian users commercially) sits within this established pattern.</p>
 
   <h3>Trade law</h3>
-  <p>The Dividend does not violate Australia's trade-treaty obligations. This is the attack most commonly made by hostile commentators and most decisively answered on close examination.</p>
+  <p>The Dividend is designed to satisfy Australia's trade-treaty obligations. The analysis is straightforward on the facial-discrimination question and substantive on the de facto question — both answers are given here; formal trade-law review by senior practitioners is reserved work for consultation.</p>
 
-  <p>Under the WTO, the General Agreement on Trade in Services, ANZTEC, DEPA, the Australia–US FTA, and the JAEPA, Australia is obliged to avoid discriminatory treatment of foreign service suppliers. The Dividend meets this obligation by applying identical rates to every supplier — Australian and foreign — assessed against an internationally-disclosed, independently-verifiable unit of measure. There is no preferential treatment for Australian suppliers. There is no targeting of foreign commercial activity. There is no offshore loophole.</p>
+  <p>Under the WTO, the General Agreement on Trade in Services, ANZTEC, DEPA, the Australia–US FTA, and the JAEPA, Australia is obliged to avoid discriminatory treatment of foreign service suppliers. The Dividend applies identical rates to every supplier — Australian and foreign — assessed against an internationally-disclosed unit of measure. There is no preferential treatment for Australian suppliers. There is no targeting of foreign commercial activity. There is no offshore loophole. On the facial-neutrality question, the answer is clean.</p>
 
-  <p>The structural distinction from Digital Services Taxes is decisive and can be summarised in one sentence: <strong>DSTs tax the gross receipts of foreign firms from services supplied to domestic users; the Dividend charges all suppliers, Australian and foreign, for the commercial supply they make to Australians, assessed by energy footprint under the international regime.</strong> This distinction has been examined by the OECD in its multi-year work on DSTs, and the Dividend's structure falls outside the DST category on every criterion the OECD uses to identify one.</p>
+  <p>The substantive question is de facto discrimination: whether a facially neutral measure can be challenged because its burden falls disproportionately on foreign suppliers. WTO and FTA jurisprudence asks whether that disproportionate burden tracks nationality or tracks a neutral characteristic with a legitimate policy basis. The Dividend's progressive band structure tracks operational scale. At the scheme's launch, the top band will in practice be populated predominantly by foreign hyperscalers, because hyperscale AI infrastructure is presently concentrated in a small number of globally-capitalised firms — a fact of international capital-market structure, not of Australian policy. The band design does not respond to nationality; it responds to scale. Over the scheme's lifetime, as AI infrastructure scales globally and the threshold reaches further into the industry, the top band captures any serious commercial participant in the Australian market, foreign or domestic. The policy basis is commons-extraction intensity measured by operational scale — the same basis on which PRRT has charged petroleum operators progressively for thirty-eight years.</p>
 
-  <p>The operational model is the Netflix Tax. Foreign suppliers register, self-disclose, submit to audit, remit what's owed. Australia has been running this architecture uncontroversially for nine years. The Dividend extends the architecture to a new unit of assessment and a new domain. The trade-law objection is, on examination, already answered by the regime that has been operating without dispute since 2017.</p>
+  <p>Canada's Digital Services Tax, withdrawn in 2025 under US pressure, illustrates what this analysis is designed to avoid. The Canadian DST's thresholds were calibrated around revenue figures that captured US tech firms specifically, with no independent policy basis beyond the fact that foreign firms clustered above those thresholds. The structural justification was thin, and the measure did not survive. The Dividend's structure is substantively different: progressive charging on operational scale, with commons-extraction intensity as the independent policy basis, and the band structure calibrated for the industry's future shape rather than its current national composition.</p>
+
+  <p>The structural distinction from DSTs can also be stated in one sentence: <strong>DSTs tax the gross receipts of foreign firms from services supplied to domestic users; the Dividend charges all suppliers, Australian and foreign, for the commercial supply they make to Australians, assessed by energy footprint under the international regime.</strong> This distinction has been examined by the OECD in its multi-year work on DSTs, and the Dividend's structure falls outside the DST category on every criterion the OECD uses to identify one.</p>
+
+  <p>The operational model for foreign suppliers is the Netflix Tax. Foreign suppliers register, self-disclose, submit to audit, remit what's owed. Australia has been running this architecture uncontroversially since 2017. The Dividend extends the architecture to a new unit of assessment and a new domain. The trade-law objection, on examination, is answered by established facial neutrality, a coherent substantive defence of the band structure's policy basis, and an operational model already running without dispute for nine years.</p>
 
   <h3>First mover</h3>
   <p>No jurisdiction has yet charged AI commercial supply on commons-doctrine grounds. The EU is building out energy disclosure obligations under the AI Act but has not attached a charge to them. The UK's Digital Services Tax targets revenue rather than commons contribution and faces continuing international friction. The OECD's Pillar One and Pillar Two work addresses profit allocation, not commons extraction. The architectural move the Dividend proposes — adopt the international measurement regime, apply the charge on commons-doctrine grounds, distribute as citizen dividend and sovereign endowment — has not yet been made anywhere.</p>
